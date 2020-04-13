@@ -1,0 +1,52 @@
+https://docs.docker.com/install/linux/docker-ce/centos/
+
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+				  
+yum update
+
+sudo apt-get install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+
+sudo apt-get yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+	
+
+
+ls /etc/yum.repos.d/
+
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+systemctl start docker.service
+
+systemctl status docker.service
+
+docker info
+=======================================================================================================================
+Adicionar usuários não root
+
+sudo gpasswd -a <User> docker
+
+docker run -it centos /bin/bash
+docker run -it <SO> /bin/bash
+
+docker run -----> inicia o container
+-it        -----> indica que é interativo
+<SO>       -----> indica o sistema operacional que será utilizado
+/bin/bash  -----> indica que será iniciado um terminal bash neste container
+
+=======================================================================================================================
+
+docker ps -----> lista todos os containers em execução
+docker ps -a --> lista todos os containers
+docker start <ID_CONTAINER> ---> inicia um container com base no ID passado
+docker attach <ID_CONTAINER> --> acessamos o container

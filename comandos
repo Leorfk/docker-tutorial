@@ -37,11 +37,11 @@ Adicionar usuários não root
 sudo gpasswd -a <User> docker
 
 docker run -it centos /bin/bash
-docker run -it <SO> /bin/bash
+docker run -it <IMAGEM> /bin/bash
 
 docker run -----> inicia o container
 -it        -----> indica que é interativo
-<SO>       -----> indica o sistema operacional que será utilizado
+<IMAGEM>       -----> indica o sistema operacional que será utilizado
 /bin/bash  -----> indica que será iniciado um terminal bash neste container
 
 =======================================================================================================================
@@ -50,3 +50,18 @@ docker ps -----> lista todos os containers em execução
 docker ps -a --> lista todos os containers
 docker start <ID_CONTAINER> ---> inicia um container com base no ID passado
 docker attach <ID_CONTAINER> --> acessamos o container
+
+=======================================================================================================================
+
+docker pull <IMAGEM> ----> baixa a imagem mais atual da aplicação
+docker pull -a <IMAGEM> -> baixa todas as imagens da aplicação
+docker images <IMAGEM> --> lista todas as versões que estão instaladas na máquina
+CTRL + P + Q ----> sai do terminal de um container
+
+=======================================================================================================================
+Copiar imagens para outros hosts
+
+docker commit <HASH> <NOME_REPOSITORIO> ----> Define o nome da imagem
+docker history <NOME_REPOSITORIO> -----> mostra o histórico da imagem
+
+docker save -o /mnt/7a833a49-0b05-406d-8d18-633bdf415e78/Projetos/toma.tar toma

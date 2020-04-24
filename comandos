@@ -65,3 +65,16 @@ docker commit <HASH> <NOME_REPOSITORIO> ----> Define o nome da imagem
 docker history <NOME_REPOSITORIO> -----> mostra o histórico da imagem
 
 docker save -o /mnt/7a833a49-0b05-406d-8d18-633bdf415e78/Projetos/toma.tar toma
+=======================================================================================================================
+
+docker stop <ID_CONTAINER> -----> Para a execução de um container selecionado
+docker restart <ID_CONTAINER> -----> Reinicia o container
+=======================================================================================================================
+ls -l /var/lib/docker/containers -----> lista os itens do diretório
+docker rm <ID_CONTAINER> -----> Remove o container
+
+alias teste="comando" ----> Usamos para definir um apelido para algum comando
+
+PDI -----> ID do Pocesso
+
+docker build -t <Nome_imagem> usr/diretório
